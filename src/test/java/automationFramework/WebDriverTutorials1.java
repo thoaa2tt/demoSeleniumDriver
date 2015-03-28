@@ -48,7 +48,7 @@ public class WebDriverTutorials1 {
 	 
 	   // locate button by id and click on it 
 	 //  driver.findElement(By.id("submitButton")).click(); 
-	   // listbox -  select box is multiselect
+	   // listbox -  select box is multiselects
 	   String olistbox = driver.findElement(By.xpath("//select[@name='FromLB']")).getText();
 	   System.out.print("Drop down list values are as bellow :\n"+olistbox);
 	   Select listbox = new Select(driver.findElement(By.xpath("//select[@name='FromLB']")));
