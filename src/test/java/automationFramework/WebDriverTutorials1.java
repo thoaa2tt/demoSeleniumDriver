@@ -35,7 +35,7 @@ public class WebDriverTutorials1 {
 	 @Test
 	 public void test() throws InterruptedException 
 	  {
-////Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
+		 ////Put a Implicit wait, this means that any search for elements on the page could take the time the implicit wait is set for before throwing exception
 	   driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	   // enter text in FistNa me
 	   driver.findElement(By.name("fname")).sendKeys("This is test");
@@ -79,9 +79,31 @@ public class WebDriverTutorials1 {
 	//WebDriverWait wait = new WebDriverWait(driver, 5);
 // wait.until(ExpectedConditions.elementToBeClickable(By.id("text2")));
 	  Thread.sleep(5000);	  
-	  // Get and store both window handles in arraybf
-		/* driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-	   Set<String> AllWindowHandles = driver.getWindowHandles();
+	  for (int i = 0; i<=20; i++)
+	  {
+	   WebElement  btn = driver.findElement(By.id("submitButton"));//Locating element by id
+	   if (btn.isEnabled()) 
+	   {
+	    //if webelement's attribute found enabled then this code will be executed.
+	    System.out.print("\nCongr8s... Button is enabled and webdriver is clicking on it now" );
+
+	   //Locating button by id and then clicking on it.
+	    driver.findElement(By.id("submitButton")).click(); 
+	    i=20;
+	    
+	   }
+	   else
+	   {
+	    //if webelement's attribute found disabled then this code will be executed.
+	    System.out.print("\nSorry but Button is disabled right now.." +btn);
+	   }
+	   try {
+	    Thread.sleep(500);
+	   } catch (InterruptedException e) {
+	    e.printStackTrace();
+	  }
+	  // Get and store both window handles in arraybfSECONDS);
+	 /*  Set<String> AllWindowHandles = driver.getWindowHandles();
 	   String window1 = (String) AllWindowHandles.toArray()[0];
 	   System.out.print("window1 handle code = "+AllWindowHandles.toArray()[0]);
 	   String window2 = (String) AllWindowHandles.toArray()[1];
@@ -116,4 +138,5 @@ public class WebDriverTutorials1 {
 	 //  System.out.print("\nTét dhihf");*/ 
 	   
 	  }
+}
 }
